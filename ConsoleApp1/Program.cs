@@ -13,12 +13,15 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             User user = new User() {
-                Email="camalzade1@gmail.com",
-                Password="123456"
+                Email="Elvin",
+                Password="eee"
             };
 
             UserContext userContext = new UserContext();
-            userContext.Users.Add(user);
+            //userContext.Users.Add(user);
+            //userContext.SaveChanges();
+            var item = userContext.Users.SingleOrDefault(x => x.Password == "eee");
+            Console.WriteLine(item.Email);
         }
     }
 }
